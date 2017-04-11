@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright:      ©  2016 Infolava GmbH  All rights reserved.
+ ================================================================================
+    This file is part of TransALM
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+-->
+
+<templates>
+    <span t-name="graphics_rag">
+        <svg class="rag_svg" preserveAspectRatio="preserveAspectRatio">
+            <circle cx="0.5em" cy="0.7em" fill="black" r="0.7em" stroke="black" stroke-width="0.05em" style="fill: green;"/>
+        </svg>
+    </span>
+</templates>

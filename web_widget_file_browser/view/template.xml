@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright:           ©  2016 Infolava GmbH  All rights reserved.
+ ================================================================================
+    This file is part of TransALM
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+-->
+<openerp>
+  <data>
+
+	<template id="assets_backend" name="web_widget_file_browser_assets" inherit_id="web.assets_backend">
+		<xpath expr="link[last()]" position="after">
+			<link href="/web_widget_file_browser/static/lib/jqueryfiletree/src/jQueryFileTree.css" rel="stylesheet" />
+		</xpath>
+	
+		<xpath expr="." position="inside">
+			<script type="text/javascript" src="/web_widget_file_browser/static/lib/jqueryfiletree/src/jQueryFileTree.js"></script>
+			<script type="text/javascript" src="/web_widget_file_browser/static/lib/jquery.easing/jquery.easing.js"/>
+			<script type="text/javascript" src="/web_widget_file_browser/static/src/js/widget.js"/>
+		</xpath>
+	</template>
+
+  </data>
+</openerp>

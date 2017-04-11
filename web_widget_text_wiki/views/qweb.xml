@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright: © 2016 Infolava GmbH All rights reserved.
+ ================================================================================
+    This file is part of TransALM
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+-->
+<openerp>
+  <data>
+
+	<template id="assets_backend" name="web_widget_text_wiki assets" inherit_id="web.assets_backend">
+		<xpath expr="link[last()]" position="after">
+			<link href="/web_widget_text_wiki/static/src/css/custom_form_stylesheet.css" rel="stylesheet" />
+		</xpath>
+		<xpath expr="." position="inside">
+			<script type="text/javascript" src="/web_widget_text_wiki/static/src/js/wiki_widget.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/marked/marked.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/dagre.min.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.jison.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.layouter.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.main.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.parser.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.renderer.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/skanaar.canvas.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/underscore.skanaar.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/vector.js"></script>
+		</xpath>
+	</template>
+
+  </data>
+</openerp>

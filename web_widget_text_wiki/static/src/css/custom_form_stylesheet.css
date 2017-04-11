@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.openerp .textarea_expanded 
+{
+	width : 99%;
+	/*background: #EDEDED;*/
+	font-size : 110%;
+}
+
+.openerp #our_canvas
+{
+	font-size : 110%;
+}
+.openerp .description_content_ro {
+/*  
+    background: #EDEDED;
+    height:300px;
+    border-width: 1px;
+    border-style: solid;
+*/
+    font-size : 118%;
+    padding: 7px;
+}
+.openerp .default_border {
+    background: #EDEDED;
+    border-style: solid;
+    border-width: 1px;
+   /* height: 140px;*/
+}
