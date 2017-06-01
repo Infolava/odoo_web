@@ -2,7 +2,7 @@
 # --------------------------------------------------------------------------------
 # Project:               TransALM
 # Copyright:           © 2017 Infolava GmbH All rights reserved.
-# License:
+# License:             GNU GENERAL PUBLIC LICENSE Version 3.0
 # --------------------------------------------------------------------------------
 #    This file is part of TransALM
 #
@@ -12,7 +12,7 @@
 #
 # --------------------------------------------------------------------------------
 # Created:               Apr 15, 2015 10:20:02 AM by hbouzidi
-# Last modified:      2017-04-02 12:52:23 AM
+# Last modified:      2017-04-16 05:51:21 PM
 #
 # Last Author:           $LastChangedBy$
 # Last Checkin:          $LastChangedDate$
@@ -22,18 +22,12 @@
 
 {
     'name' : 'Wiki Editor Widget',
-    'version' : '0.1.0',
+    'version' : '0.1.1',
     'summary' : '''Wiki Editor Widget for textual fields''',
     'author' : 'Infolava',
     'website': 'http://www.infolava.ch',
     'category' : 'Web Widgets',
     'depends' : ['web'],
-    #===========================================================================
-    # 'js' : ['static/src/js/wiki_widget.js',
-    #         'static/lib/marked/*.js',
-    #         'static/lib/nomnoml/*.js',
-    #         ],
-    #===========================================================================
     'qweb': ['static/src/xml/template.xml'],
     'data':['views/qweb.xml'],
     'active': False,

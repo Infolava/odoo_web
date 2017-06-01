@@ -1,26 +1,19 @@
 /*@(#)wiki_widget.js
- --------------------------------------------------------------------------------
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+--------------------------------------------------------------------------------
+    This file is part of TransALM
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- --------------------------------------------------------------------------------
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+--------------------------------------------------------------------------------
  Project:        Trans-ALM
  Author:         <a href="mailto:hb@transprog.com">H. Bouzidi</a>
- Copyright:        © 2015 Infolava. All rights reserved.
- License:
+ Copyright:      © 2017 Infolava GmbH. All rights reserved.
+ License:        GNU GENERAL PUBLIC LICENSE Version 3.0
  --------------------------------------------------------------------------------
  HeadURL:              $HeadURL$
- Created:              2015-04-15 23:50:50
- Last modified:        2015-04-15 23:52:29
+ Created:              2015-04-13 23:50:50
+ Last modified:        2017-04-17 05:17:55 AM
 
  Last Checkin:         $LastChangedDate$
  Last Author:          $LastChangedBy$
@@ -66,7 +59,7 @@ openerp.web_widget_text_wiki = function(instance) {
 					token.push({
 						type : 'wiki',
 						syntax : src,
-				    	});
+					});
 					src = "";
 					continue;
 				}
@@ -76,7 +69,7 @@ openerp.web_widget_text_wiki = function(instance) {
 					token.push({
 						type : 'wiki',
 						syntax : src,
-				    	});
+					});
 					src = "";
 					continue;
 				}
@@ -86,11 +79,6 @@ openerp.web_widget_text_wiki = function(instance) {
 		
 		render_value : function() {
 			if (this.get("effective_readonly")) {
-				/*if (this.get('value') == ""){
-					//$("#our_canvas").removeClass("description_content_ro");
-					//$("#our_canvas").addClass("default_border")
-				}
-				else {*/
 					wiki_elements = this.split_wiki_uml(this.get('value'));
 					var html_syntaxt = "";
 					var canvas_ids = []
@@ -110,26 +98,26 @@ openerp.web_widget_text_wiki = function(instance) {
 					this.$el.html(html_syntaxt)
 					if (canvas_ids != []){
 						for (j=0; j < canvas_ids.length; j++){
-							try {nomnoml.main(wiki_elements[canvas_ids[j]].syntax,'canvas' + canvas_ids[j].toString());}
-							catch (e) {alert('Invalid syntax for UML diagram in the field description');}
+							canvas = document.getElementById('canvas' + canvas_ids[j].toString());
+							try {nomnoml.draw(canvas, wiki_elements[canvas_ids[j]].syntax);}
+							catch (e) {
+								alert('Invalid syntax for UML diagram in the field description');
+							}
 						}
 					}
-				//}
 			} else {
 				this.$("textarea").val(this.get("value") || '');
 			}
 		},
 		commit_value: function () {
-	        if (! this.get("effective_readonly")) {
-	            this.store_dom_value();
-	        }
-	        return this._super();
-	    },
-	    store_dom_value: function () {
-	        this.internal_set_value(instance.web.parse_value(this.$("textarea").val(), this));
-	    },
+			if (! this.get("effective_readonly")) {
+				this.store_dom_value();
+			}
+			return this._super();
+		},
+		store_dom_value: function () {
+			this.internal_set_value(instance.web.parse_value(this.$("textarea").val(), this));
+		},
 	})
 }
-
-
-			
+//eof wiki_widget.js

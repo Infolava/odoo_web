@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright: © 2016 Infolava GmbH All rights reserved.
+<!-- Copyright: © 2017 Infolava GmbH All rights reserved.
+ License:             GNU GENERAL PUBLIC LICENSE Version 3.0
  ================================================================================
     This file is part of TransALM
 
@@ -18,7 +19,13 @@
 		<xpath expr="." position="inside">
 			<script type="text/javascript" src="/web_widget_text_wiki/static/src/js/wiki_widget.js"></script>
 			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/marked/marked.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/dagre.min.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/dagre.min.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/zepto.min.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.js"></script>
+
+<!-- conflicts with odoo
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/require.js"></script>
+			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/lodash.min.js"></script>
 			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.jison.js"></script>
 			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.layouter.js"></script>
 			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.main.js"></script>
@@ -27,6 +34,7 @@
 			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/skanaar.canvas.js"></script>
 			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/underscore.skanaar.js"></script>
 			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/vector.js"></script>
+-->
 		</xpath>
 	</template>
 
