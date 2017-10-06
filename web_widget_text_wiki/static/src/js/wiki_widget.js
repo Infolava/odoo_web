@@ -81,7 +81,7 @@ openerp.web_widget_text_wiki = function(instance) {
 			if (this.get("effective_readonly")) {
 					wiki_elements = this.split_wiki_uml(this.get('value'));
 					var html_syntaxt = "";
-					var canvas_ids = []
+					var canvas_ids = new Map();
 					for (i=0; i < wiki_elements.length; i++){
 						switch (wiki_elements[i].type){
 						case 'wiki' : {
@@ -89,17 +89,18 @@ openerp.web_widget_text_wiki = function(instance) {
 							break;
 						}
 						case 'uml' : {
-							html_syntaxt += "<canvas id='canvas" + i.toString() + "'/>";
-							canvas_ids.push(i);
+							canvas_dom_id = "uml_canvas_" + i.toString() + this.el.parentNode.id;
+							html_syntaxt += "<canvas id='" + canvas_dom_id +"'/>";
+							canvas_ids.set(i,canvas_dom_id);
 							break;
 						}
 						}
 					}
 					this.$el.html(html_syntaxt)
-					if (canvas_ids != []){
-						for (j=0; j < canvas_ids.length; j++){
-							canvas = document.getElementById('canvas' + canvas_ids[j].toString());
-							try {nomnoml.draw(canvas, wiki_elements[canvas_ids[j]].syntax);}
+					if (canvas_ids != {}){
+						for (var [c,v] of canvas_ids){
+							canvas = document.getElementById(v.toString());
+							try {nomnoml.draw(canvas, wiki_elements[c].syntax);}
 							catch (e) {
 								alert('Invalid syntax for UML diagram in the field description');
 							}

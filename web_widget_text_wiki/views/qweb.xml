@@ -10,33 +10,26 @@
 
 -->
 <openerp>
-  <data>
-
-	<template id="assets_backend" name="web_widget_text_wiki assets" inherit_id="web.assets_backend">
-		<xpath expr="link[last()]" position="after">
-			<link href="/web_widget_text_wiki/static/src/css/custom_form_stylesheet.css" rel="stylesheet" />
-		</xpath>
-		<xpath expr="." position="inside">
-			<script type="text/javascript" src="/web_widget_text_wiki/static/src/js/wiki_widget.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/marked/marked.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/dagre.min.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/zepto.min.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.js"></script>
-
-<!-- conflicts with odoo
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/require.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/lodash.min.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.jison.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.layouter.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.main.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.parser.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.renderer.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/skanaar.canvas.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/underscore.skanaar.js"></script>
-			<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/vector.js"></script>
--->
-		</xpath>
-	</template>
-
-  </data>
+	<data>
+		<template id="assets_backend" name="web_widget_text_wiki assets" inherit_id="web.assets_backend">
+				<xpath expr="link[last()]" position="after">
+					<link href="/web_widget_text_wiki/static/src/css/custom_form_stylesheet.css" rel="stylesheet"/>
+				</xpath>
+				<xpath expr="." position="inside">
+					<script type="text/javascript" src="/web_widget_text_wiki/static/src/js/wiki_widget.js"></script>
+					<script type="text/javascript" src="/web_widget_text_wiki/static/lib/marked/marked.js"></script>
+					<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/dagre.min.js"></script>
+					<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/zepto.min.js"></script>
+					<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml/nomnoml.js"></script>
+					<!-- 
+					load the non-require.js standalone bundles in script tags before require.js is loaded
+					see http://requirejs.org/docs/errors.html#mismatch
+					-->
+					<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/require.js"></script>
+				<!-- conflicts with odoo
+					<script type="text/javascript" src="/web_widget_text_wiki/static/lib/nomnoml.deps/lodash.min.js"></script>
+				-->
+				</xpath>
+		</template>
+	</data>
 </openerp>
