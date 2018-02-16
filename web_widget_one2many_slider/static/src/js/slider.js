@@ -1,4 +1,4 @@
-openerp.web_one2many_slider_widget=function(instance,module)
+openerp.web_widget_one2many_slider=function(instance,module)
 {
 	var QWeb = instance.web.qweb;
 	var _t = instance.web._t;
@@ -16,8 +16,9 @@ openerp.web_one2many_slider_widget=function(instance,module)
 	        var dataset = new instance.web.DataSetStatic(this, this.field.relation, self.build_context());
 	        return dataset.name_get(ids);
 	    },
-	
+	    
 	    start: function () {
+	    	this._super.apply(this, arguments);
 	    	var self = this;
 	    	this.alive(self.get_render_data(this.get('value'))).done(function(data) 
 	    			{
@@ -33,7 +34,7 @@ openerp.web_one2many_slider_widget=function(instance,module)
 
 	    			        });
 	    		    	};
-	    		    	var MyRangeSlide = rangeslide("#rangeslide-demo", {
+	    		    	var MyRangeSlide = rangeslide("#rangeslide", {
 	    		    	    enableLabelClick: true,
 	    		    	    enableMarkerClick: true,
 	    		    	    enableTrackClick: false,
