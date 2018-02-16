@@ -3,9 +3,9 @@
     <data>
         <template id="assets_backend" name="web_slider_widget assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
-                <script type="text/javascript" src="/web_one2many_slider_widget/static/lib/rangeslide/dist/rangeslide.js"/>
-                <script type="text/javascript" src="/web_one2many_slider_widget/static/src/js/slider.js"/>
-                <link rel="stylesheet" href="/web_one2many_slider_widget/static/lib/rangeslide/dist/rangeslide.css"/>
+                <script type="text/javascript" src="/web_widget_one2many_slider/static/lib/rangeslide/dist/rangeslide.js"/>
+                <script type="text/javascript" src="/web_widget_one2many_slider/static/src/js/slider.js"/>
+                <link rel="stylesheet" href="/web_widget_one2many_slider/static/lib/rangeslide/dist/rangeslide.css"/>
             </xpath>
         </template>
     </data>
